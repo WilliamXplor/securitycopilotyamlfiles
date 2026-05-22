@@ -1,0 +1,25 @@
+openapi: 3.0.0
+
+info:
+    title: Spur US IP Context
+    description: Lookup IP Addresses using Spur US IP Context service.
+    version: "0.9.2"
+
+servers:
+    - url: https://api.spur.us/v2/
+
+paths:
+    /context/{ip}:
+        get: 
+            operationId: IpLookup
+            summary: Submits IP address for lookup
+            parameters:
+                - name: ip
+                  in: path
+                  required: true
+                  schema:
+                    type: string
+
+            responses:
+                200:
+                    description: Successful request. 
