@@ -1,0 +1,16 @@
+Descriptor:
+  Name: SpurUsIPContext
+  DisplayName: Spur US IP Context
+  Description: Lookup IP addresses using Spur US Context
+  SupportedAuthTypes:
+    - ApiKey
+  Authorization:
+    Type: APIKey
+    Key: Token
+    Location: Header
+    AuthScheme: ''
+
+SkillGroups:
+  - Format: API
+    Settings:
+      OpenApiSpecUrl: https://raw.githubusercontent.com/WilliamXplor/securitycopilotyamlfiles/refs/heads/main/spur-us-context-openapi.yaml
