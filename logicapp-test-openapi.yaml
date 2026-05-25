@@ -13,6 +13,7 @@ paths:
         post: 
             operationId: sendMessage
             summary: Send message to logic app to call it
+            description: Invokes the logic app
 
             parameters:
                 - in: query
