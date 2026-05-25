@@ -10,9 +10,9 @@ Descriptor:
 
   SupportedAuthTypes:
     - ApiKey
-    
+
   Authorization:
-    Type: APIKey
+    Type: ApiKey
     Key: sig
     Location: QueryParams
     AuthScheme: ''
