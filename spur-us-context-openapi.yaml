@@ -22,4 +22,6 @@ paths:
 
             responses:
                 200:
-                    description: Successful request. 
+                    description: Successful request
+                400:
+                    description: unsuccesful request 
