@@ -12,7 +12,7 @@ Descriptor:
   Authorization:
     Type: APIKey
     Key: sig
-    Location: query
+    Location: QueryParams
     AuthScheme: ''
 
 SkillGroups:
