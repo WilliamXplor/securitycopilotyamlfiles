@@ -1,5 +1,7 @@
 Descriptor:
   Name: LogicAppTest
+  DisplayName: Logic App Test
+  Description: Calls a logic app endpoint
   Settings:
     - Name: InstanceURL
       Label: Instance URL
@@ -12,7 +14,7 @@ Descriptor:
     - ApiKey
 
   Authorization:
-    Type: ApiKey
+    Type: APIKey
     Key: sig
     Location: QueryParams
     AuthScheme: ''
