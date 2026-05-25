@@ -28,7 +28,7 @@ paths:
                   required: true
                   schema:
                     type: string
-                    default: "/triggers/Request/run
+                    default: "/triggers/Request/run"
 
                 - in: query
                   name: sv
