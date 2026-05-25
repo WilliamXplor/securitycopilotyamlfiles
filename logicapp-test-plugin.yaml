@@ -18,5 +18,5 @@ Descriptor:
 SkillGroups:
   - Format: API
     Settings:
-      OpenApiSpecURL: url here
+      OpenApiSpecURL: https://raw.githubusercontent.com/WilliamXplor/securitycopilotyamlfiles/refs/heads/main/logicapp-test-openapi.yaml
       EndpointUrlSettingName: InstanceURL
