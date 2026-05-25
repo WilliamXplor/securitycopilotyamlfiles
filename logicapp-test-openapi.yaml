@@ -15,28 +15,6 @@ paths:
             summary: Send message to logic app to call it
             description: Invokes the logic app
 
-            parameters:
-                - in: query
-                  name: api-version
-                  required: true
-                  schema:
-                    type: string
-                    default: "2016-10-01"
-
-                - in: query
-                  name: sp
-                  required: true
-                  schema:
-                    type: string
-                    default: "/triggers/Request/run"
-
-                - in: query
-                  name: sv
-                  required: true
-                  schema:
-                    type: string
-                    default: "1.0"
-
             requestBody:
                 required: true
                 content:
