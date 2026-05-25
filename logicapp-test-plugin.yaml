@@ -7,8 +7,10 @@ Descriptor:
       HintText: "e.g. https://example.com"
       SettingType: String
       Required: true
+
   SupportedAuthTypes:
     - ApiKey
+    
   Authorization:
     Type: APIKey
     Key: sig
