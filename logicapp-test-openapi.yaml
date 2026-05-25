@@ -1,0 +1,76 @@
+openapi: 3.0.0
+
+info:
+    title: Logic App Call Test
+    description: Plugin to test calling a logic app from security copilot
+    version: "0.9.2"
+
+servers:
+    - url: https://example.com
+
+paths:
+    /:
+        post: 
+            operationId: sendMessage
+            summary: Send message to logic app to call it
+
+            parameters:
+                - in: query
+                  name: api-version
+                  required: true
+                  schema:
+                    type: string
+                    default: "2016-10-01"
+
+                - in: query
+                  name: sp
+                  required: true
+                  schema:
+                    type: string
+                    default: "/triggers/Request/run
+
+                - in: query
+                  name: sv
+                  required: true
+                  schema:
+                    type: string
+                    default: "1.0"
+
+            requestBody:
+                required: true
+                content:
+                    application/json:
+                        schema:
+                            $ref: "#/components/schemas/sendMessageRequest"
+                        examples:
+                            example:
+                                value:
+                                    message: "foo bar"
+
+            responses:
+                "200":
+                    description: Send message result
+                    content:
+                        application/json:
+                            schema:
+                                $ref: "#/components/schemas/sendMessageResponse"
+
+components:
+    schemas:
+        sendMessageRequest:
+            type: object
+            required:
+                - message
+            properties:
+                message:
+                    type: string
+                    description: Message to send logic app
+
+        sendMessageResponse:
+            type: object
+            required:
+                - message
+            properties:
+                message:
+                    type: string
+

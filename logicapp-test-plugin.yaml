@@ -1,0 +1,22 @@
+Descriptor:
+  Name: LogicAppTest
+  Settings:
+    - Name: InstanceURL
+      Label: Instance URL
+      Description: The URL of the instance to connect to
+      HintText: "e.g. https://example.com"
+      SettingType: String
+      Required: true
+  SupportedAuthTypes:
+    - ApiKey
+  Authorization:
+    Type: APIKey
+    Key: sig
+    Location: query
+    AuthScheme: ''
+
+SkillGroups:
+  - Format: API
+    Settings:
+      OpenApiSpecURL: url here
+      EndpointUrlSettingName: InstanceURL
