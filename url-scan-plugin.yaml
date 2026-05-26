@@ -1,6 +1,6 @@
 Descriptor:
-  Name: UrlScan
-  DisplayName: Url Scan
+  Name: UrlScanIo
+  DisplayName: Url Scan Io
   Description: Submits Url to Urlscan.io and retrieves results
   Settings:
     - Name: InstanceURL
