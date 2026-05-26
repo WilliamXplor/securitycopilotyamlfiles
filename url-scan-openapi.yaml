@@ -1,7 +1,7 @@
 openapi: 3.0.0
 
 info:
-    title: Url Scan Io
+    title: Xplor Url Scan Io
     description: Plugin to submit url to Url Scan.io and retrieve results
     version: "0.9.2"
 

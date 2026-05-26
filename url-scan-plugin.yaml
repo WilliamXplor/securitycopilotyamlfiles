@@ -1,6 +1,6 @@
 Descriptor:
-  Name: UrlScanIo
-  DisplayName: Url Scan Io
+  Name: XplorUrlScanIo
+  DisplayName: Xplor Url Scan Io
   Description: Submits Url to Urlscan.io and retrieves results
   Settings:
     - Name: InstanceURL
