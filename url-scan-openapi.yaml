@@ -1,0 +1,58 @@
+openapi: 3.0.0
+
+info:
+    title: Url Scan
+    description: Plugin to submit url to Url Scan.io and retrieve results
+    version: "0.9.2"
+
+servers:
+    - url: https://example.com
+
+paths:
+    /:
+        post: 
+            operationId: submitUrl
+            summary: Send Url to logic app
+            description: Invokes the logic app
+
+            requestBody:
+                required: true
+                content:
+                    application/json:
+                        schema:
+                            $ref: "#/components/schemas/submitUrl"
+                        examples:
+                            example:
+                                value:
+                                    UrlToCheck: "https://example.com"
+
+            responses:
+                "200":
+                    description: Send Url Scan.io results
+                    content:
+                        application/json:
+                            schema:
+                                $ref: "#/components/schemas/sendReport"
+
+components:
+    schemas:
+        submitUrl:
+            type: object
+            required:
+                - UrlToCheck
+            properties:
+                UrlToCheck:
+                    type: string
+                    description: Send Url to loigc app
+
+        sendReport:
+            type: object
+            required:
+                - task
+                - verdicts
+            properties:
+                task:
+                    type: object
+                verdicts:
+                    type: object
+

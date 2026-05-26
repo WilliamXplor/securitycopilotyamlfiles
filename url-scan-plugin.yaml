@@ -1,0 +1,26 @@
+Descriptor:
+  Name: UrlScan
+  DisplayName: Url Scan
+  Description: Submits Url to Urlscan.io and retrieves results
+  Settings:
+    - Name: InstanceURL
+      Label: Instance URL
+      Description: The URL of the instance to connect to
+      HintText: "e.g. https://example.com"
+      SettingType: String
+      Required: true
+
+  SupportedAuthTypes:
+    - ApiKey
+
+  Authorization:
+    Type: APIKey
+    Key: sig
+    Location: QueryParams
+    AuthScheme: ''
+
+SkillGroups:
+  - Format: API
+    Settings:
+      OpenApiSpecURL: paste url here
+      EndpointUrlSettingName: InstanceURL
