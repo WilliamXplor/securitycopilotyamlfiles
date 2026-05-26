@@ -22,5 +22,5 @@ Descriptor:
 SkillGroups:
   - Format: API
     Settings:
-      OpenApiSpecURL: paste url here
+      OpenApiSpecURL: https://raw.githubusercontent.com/WilliamXplor/securitycopilotyamlfiles/refs/heads/main/url-scan-openapi.yam
       EndpointUrlSettingName: InstanceURL
