@@ -17,7 +17,7 @@ SkillGroups:
           Target: Sentinel
           TenantId: 60ae198f-5c79-4366-b9bc-144b9d52c178
           SubscriptionId: 41bcb10b-bb8f-4a21-bbdf-bf82f97225d5
-          ResourceGroupNme: rg-project-mahi-prd
+          ResourceGroupName: rg-project-mahi-prd
           WorkspaceName: ws-project-mahi-prd
           Template: |-
             EmailEvents
