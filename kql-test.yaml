@@ -1,6 +1,6 @@
 Descriptor:
   Name: TestSentinelKQL
-  DisplayName: My Test Sentinel KQL Plugin
+  DisplayName: Test Sentinel KQL Plugin
   Description: Skills to query email logs in M365 Advanced Hunting
 
 SkillGroups:
