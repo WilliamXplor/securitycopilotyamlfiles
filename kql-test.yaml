@@ -1,0 +1,27 @@
+Descriptor:
+  Name: TestSentinelKQL
+  DisplayName: My Test Sentinel KQL Plugin
+  Description: Skills to query email logs in M365 Advanced Hunting
+
+SkillGroups:
+  - Format: KQL
+    Skills:
+      - Name: GetLatestEmailsByRecipient
+        DisplayName: Get Latest Emails By Recipient
+        Description: Fetches the latest emails received by the user with the specified email address
+        Inputs:
+          - Name: email
+            Description: The email address of the recipient
+            Required: true
+        Settings:
+          Target: Sentinel
+          TenantId: 60ae198f-5c79-4366-b9bc-144b9d52c178
+          SubscriptionId: 41bcb10b-bb8f-4a21-bbdf-bf82f97225d5
+          ResourceGroupNme: rg-project-mahi-prd
+          WorkspaceName: ws-project-mahi-prd
+          Template: |-
+            EmailEvents
+            | where TimeGenerated >= ago(1d)
+            | where RecipientEmailAddress =~ '{{email}}'
+            | project TimeGenerated, NetworkMessageId, SenderFromAddress, SenderDisplayName, Subject, DeliveryLocation
+            | top 1 by TimeGenerated desc
