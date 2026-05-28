@@ -13,4 +13,4 @@ Descriptor:
 SkillGroups:
   - Format: API
     Settings:
-      OpenApiSpecUrl: 
+      OpenApiSpecUrl: https://raw.githubusercontent.com/WilliamXplor/securitycopilotyamlfiles/refs/heads/main/virustotal-domainlookup-openapi.yaml
