@@ -19,6 +19,12 @@ paths:
                   required: true
                   schema:
                     type: string
+            responses:
+                200:
+                    description: Successful request
+                400:
+                    description: Unsuccesful request 
+            
     /files/{id}:
         get:
             operationId: FileLookup
@@ -29,7 +35,6 @@ paths:
                   required: true
                   schema:
                     type: string
-
             responses:
                 200:
                     description: Successful request
