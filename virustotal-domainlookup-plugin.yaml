@@ -1,0 +1,16 @@
+Descriptor:
+  Name: VirusTotalDomainLookup
+  DisplayName: Virus Total Domain Lookup
+  Description: Lookup domain using Virus Total
+  SupportedAuthTypes:
+    - ApiKey
+  Authorization:
+    Type: APIKey
+    Key: x-apikey
+    Location: Header
+    AuthScheme: ''
+
+SkillGroups:
+  - Format: API
+    Settings:
+      OpenApiSpecUrl: 
