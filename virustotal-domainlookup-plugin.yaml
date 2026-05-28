@@ -1,7 +1,7 @@
 Descriptor:
-  Name: VirusTotalDomainLookup
-  DisplayName: Virus Total Domain Lookup
-  Description: Lookup domain using Virus Total
+  Name: VirusTotalLookup
+  DisplayName: Virus Total Lookup
+  Description: Lookup domain or file using Virus Total
   SupportedAuthTypes:
     - ApiKey
   Authorization:
