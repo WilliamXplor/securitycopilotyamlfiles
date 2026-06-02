@@ -22,5 +22,5 @@ Descriptor:
 SkillGroups:
   - Format: API
     Settings:
-      OpenApiSpecURL: URL GOES HERE
+      OpenApiSpecURL: https://raw.githubusercontent.com/WilliamXplor/securitycopilotyamlfiles/refs/heads/main/get-emaildetails-openapi.yaml
       EndpointUrlSettingName: InstanceURL
