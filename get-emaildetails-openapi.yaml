@@ -41,7 +41,7 @@ components:
             required:
                 - NetworkMessageId
             properties:
-                UrlToCheck:
+                NetworkMessageId:
                     type: string
                     description: Send NetworkMessageId to loigc app
 
