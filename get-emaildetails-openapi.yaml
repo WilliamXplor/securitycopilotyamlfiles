@@ -1,0 +1,61 @@
+openapi: 3.0.0
+
+info:
+    title: Get Email Details
+    description: Runs KQL queries to retrieve email details from Sentinel data
+    version: "0.9.2"
+
+servers:
+    - url: https://example.com
+
+paths:
+    /:
+        post: 
+            operationId: submitNetworkMessageId
+            summary: Send NetworkMessageId to logic app
+            description: Invokes the logic app
+
+            requestBody:
+                required: true
+                content:
+                    application/json:
+                        schema:
+                            $ref: "#/components/schemas/submitNetworkMessageId"
+                        examples:
+                            example:
+                                value:
+                                    NetworkMessageId: "01234567-89ab-cdef-0123-456789abc"
+
+            responses:
+                "200":
+                    description: NetworkMessageId to logic app
+                    content:
+                        application/json:
+                            schema:
+                                $ref: "#/components/schemas/sendData"
+
+components:
+    schemas:
+        submitNetworkMessageId:
+            type: object
+            required:
+                - NetworkMessageId
+            properties:
+                UrlToCheck:
+                    type: string
+                    description: Send NetworkMessageId to loigc app
+
+        sendData:
+            type: object
+            required:
+                - EmailDetails
+                - UrlInfoandClicks
+                - AttachmentInfoandFileEvents
+            properties:
+                EmailDetails:
+                    type: array
+                UrlInfoandClicks:
+                    type: array
+                AttachmentInfoandFileEvents:
+                    type: array
+
