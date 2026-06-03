@@ -1,0 +1,16 @@
+Descriptor:
+  Name: GetSentinelIncidentDetails
+  DisplayName: Get Sentinel Incident Details
+  Description: Retreive Setinel incident information
+  SupportedAuthTypes:
+    - ApiKey
+  Authorization:
+    Type: APIKey
+    Key: sig
+    Location: QueryParams
+    AuthScheme: ''
+
+SkillGroups:
+  - Format: API
+    Settings:
+      OpenApiSpecUrl: URL GOES HERE

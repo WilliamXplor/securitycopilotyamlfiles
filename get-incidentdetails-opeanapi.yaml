@@ -1,0 +1,59 @@
+openapi: 3.0.0
+
+info:
+    title: Get Sentinel Incident Details
+    description: Runs KQL queries to retrieve Sentinel incident details
+    version: "0.9.2"
+
+servers:
+    - url: https://example.com
+
+paths:
+    /:
+        post: 
+            operationId: submitSentinelIncidentNumber
+            summary: Send SentinelIncidentNumber to logic app
+            description: Invokes the logic app
+
+            requestBody:
+                required: true
+                content:
+                    application/json:
+                        schema:
+                            $ref: "#/components/schemas/submitSentinelIncidentNumber"
+                        examples:
+                            example:
+                                value:
+                                    SentinelIncidentNumber: "0123456"
+
+            responses:
+                "200":
+                    description: Send Sentinel Incident Number to logic app
+                    content:
+                        application/json:
+                            schema:
+                                $ref: "#/components/schemas/sendIncidentData"
+
+components:
+    schemas:
+        submitSentinelIncidentNumber:
+            type: object
+            required:
+                - SentinelIncidentNumber
+            properties:
+                SentinelIncidentNumber:
+                    type: string
+                    description: Send SentinelIncidentNumber to loigc app
+
+        sendIncidentData:
+            type: object
+            required:
+                - IncidentDetails
+                - AlertInformation
+            properties:
+                IncidentDetails:
+                    type: array
+                AlertInformation:
+                    type: array
+
+
