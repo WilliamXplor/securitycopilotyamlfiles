@@ -2,6 +2,14 @@ Descriptor:
   Name: GetSentinelIncidentDetails
   DisplayName: Get Sentinel Incident Details
   Description: Retreive Setinel incident information
+  Settings:
+    - Name: InstanceURL
+      Label: Instance URL
+      Description: The URL of the instance to connect to
+      HintText: "e.g. https://example.com"
+      SettingType: String
+      Required: true
+      
   SupportedAuthTypes:
     - ApiKey
   Authorization:
@@ -13,4 +21,5 @@ Descriptor:
 SkillGroups:
   - Format: API
     Settings:
-      OpenApiSpecUrl: URL GOES HERE
+      OpenApiSpecUrl: https://raw.githubusercontent.com/WilliamXplor/securitycopilotyamlfiles/refs/heads/main/get-incidentdetails-opeanapi.yaml
+      EndpointUrlSettingName: InstanceURL
