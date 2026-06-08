@@ -1,7 +1,7 @@
 Descriptor:
-  Name: GetDeviceInformation
-  DisplayName: Get Device Information
-  Description: Get Device Information From Defender and Sentinel
+  Name: GetDeviceInformationAlertHistory
+  DisplayName: Get Device Information and Alert History
+  Description: Get Device Information and Alert History From Defender and Sentinel
   Settings:
     - Name: InstanceURL
       Label: Instance URL
