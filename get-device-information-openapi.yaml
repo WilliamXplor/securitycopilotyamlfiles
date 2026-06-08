@@ -20,7 +20,7 @@ paths:
                 content:
                     application/json:
                         schema:
-                            $ref: "#/components/schemas/GetDeviceInfo
+                            $ref: "#/components/schemas/GetDeviceInfo"
                         examples:
                             example:
                                 value:
