@@ -1,0 +1,16 @@
+Descriptor:
+  Name: GetDeviceInformation
+  DisplayName: Get Device Information
+  Description: Get Device Information From Defender and Sentinel
+  SupportedAuthTypes:
+    - ApiKey
+  Authorization:
+    Type: APIKey
+    Key: sig
+    Location: QueryParams
+    AuthScheme: ''
+
+SkillGroups:
+  - Format: API
+    Settings:
+      OpenApiSpecUrl: URL HERE
