@@ -2,6 +2,14 @@ Descriptor:
   Name: GetDeviceInformation
   DisplayName: Get Device Information
   Description: Get Device Information From Defender and Sentinel
+  Settings:
+    - Name: InstanceURL
+      Label: Instance URL
+      Description: The URL of the instance to connect to
+      HintText: "e.g. https://example.com"
+      SettingType: String
+      Required: true
+      
   SupportedAuthTypes:
     - ApiKey
   Authorization:
@@ -14,3 +22,4 @@ SkillGroups:
   - Format: API
     Settings:
       OpenApiSpecUrl: https://raw.githubusercontent.com/WilliamXplor/securitycopilotyamlfiles/refs/heads/main/get-device-information-openapi.yaml
+      EndpointUrlSettingName: InstanceURL
