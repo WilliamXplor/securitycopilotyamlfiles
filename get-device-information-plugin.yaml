@@ -13,4 +13,4 @@ Descriptor:
 SkillGroups:
   - Format: API
     Settings:
-      OpenApiSpecUrl: URL HERE
+      OpenApiSpecUrl: https://raw.githubusercontent.com/WilliamXplor/securitycopilotyamlfiles/refs/heads/main/get-device-information-openapi.yaml
