@@ -1,0 +1,61 @@
+openapi: 3.0.0
+
+info:
+    title: Get Previous Incident Information
+    description: Runs Logic app to return previous incident information
+    version: "0.9.2"
+
+servers:
+    - url: https://example.com
+
+paths:
+    /:
+        post: 
+            operationId: GetPreviousIncidentInfo
+            summary: Get previous incident information
+            description: Get previous incident information
+
+            requestBody:
+                required: true
+                content:
+                    application/json:
+                        schema:
+                            $ref: "#/components/schemas/GetPreviousIncidentInfo"
+                        examples:
+                            example:
+                                value:
+                                    DeviceName: "Cybersecurity incident involving one user"
+
+            responses:
+                "200":
+                    description: Send results back
+                    content:
+                        application/json:
+                            schema:
+                                $ref: "#/components/schemas/sendData"
+
+components:
+    schemas:
+        GetPreviousIncidentInfo:
+            type: object
+            required:
+                - IncidentTitle
+            properties:
+                DeviceName:
+                    type: string
+                    description: Title of previous incidents to lookup
+
+        sendData:
+            type: object
+            required:
+                - PreviousIncidentStats
+                - PreviousIncidentDetailedInfo
+                - ExplanationForAgent
+            properties:
+                PreviousIncidentStats:
+                    type: array
+                PreviousIncidentDetailedInfo:
+                    type: array
+                ExplanationForAgent:
+                    type: string
+
