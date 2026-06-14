@@ -1,7 +1,7 @@
 Descriptor:
   Name: GetPreviousIncidentInfo
-  DisplayName: Get Previous Incident Information
-  Description: Get Device Information and Alert History From Defender and Sentinel
+  DisplayName: Get Previous Incident Information For Given Incident Type
+  Description: Get Previous Incident Information For Given Incident Type
   Settings:
     - Name: InstanceURL
       Label: Instance URL
