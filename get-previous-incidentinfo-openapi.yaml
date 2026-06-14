@@ -41,7 +41,7 @@ components:
             required:
                 - IncidentTitle
             properties:
-                DeviceName:
+                IncidentTitle:
                     type: string
                     description: Title of previous incidents to lookup
 
