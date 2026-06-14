@@ -50,12 +50,9 @@ components:
             required:
                 - PreviousIncidentStats
                 - PreviousIncidentDetailedInfo
-                - ExplanationForAgent
             properties:
                 PreviousIncidentStats:
                     type: array
                 PreviousIncidentDetailedInfo:
                     type: array
-                ExplanationForAgent:
-                    type: string
 
