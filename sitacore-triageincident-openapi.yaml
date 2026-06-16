@@ -1,0 +1,107 @@
+openapi: 3.0.0
+
+info:
+    title: Core Incident Triage
+    description: Triages analysed security incident
+    version: "0.9.2"
+
+servers:
+    - url: https://example.com
+
+paths:
+    /:
+        post: 
+            operationId: CoreTriageIncident
+            summary: Send analysis JSON for triage
+            description: Invokes the logic app
+
+            requestBody:
+                required: true
+                content:
+                    application/json:
+                        schema:
+                            $ref: "#/components/schemas/CoreTriageIncident"
+
+            responses:
+                "200":
+                    description: Response from logic app
+                    content:
+                        application/json:
+                            schema:
+                                $ref: "#/components/schemas/sendData"
+
+components:
+    schemas:
+        CoreTriageIncident:
+            type: object
+            properties:
+            IncidentDetails:
+                type: object
+                properties:
+                IncidentNumber:
+                    type: string
+                IncidentAnalysis:
+                    type: string
+                IncidentAnalysisConfidence:
+                    type: number
+                IncidentAnalysisSummary:
+                    type: string
+            required:
+                - IncidentDetails
+                - IncidentNumber
+                - IncidentAnalysis
+                - IncidentAnalysisConfidence
+                - IncidentAnalysisConfidence
+
+            UserEntityDetails:
+                type: array
+                items:
+                type: object
+                properties:
+                    UserPrincipalName:
+                    type: string
+                    UserId:
+                    type: string
+                    RecommendedUserAction:
+                    type: string
+                    RecommendedUserActionConfidence:
+                    type: number
+                    RecommendedUserActionSummary:
+                    type: string
+                required:
+                    - UserPrincipalName
+                    - UserId
+                    - RecommendedUserAction
+                    - RecommendedUserActionConfidence
+                    - RecommendedUserActionSummary
+
+            HostEntityDetails:
+                type: array
+                items:
+                type: object
+                properties:
+                    HostName:
+                    type: string
+                    DefenderDeviceId:
+                    type: string
+                    RecommendedHostAction:
+                    type: string
+                    RecommendedHostActionConfidence:
+                    type: number
+                required:
+                    - HostName
+                    - DefenderDeviceId
+                    - RecommendedHostAction
+                    - RecommendedHostActionConfidence
+
+            OverallSummary:
+                type: string
+
+        sendData:
+            type: object
+            required:
+                - Outcome
+            properties:
+                Outcome:
+                    type: string
+
