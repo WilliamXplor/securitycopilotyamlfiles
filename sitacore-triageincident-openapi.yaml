@@ -35,23 +35,23 @@ components:
         CoreTriageIncident:
             type: object
             properties:
-            IncidentDetails:
-                type: object
-                properties:
-                IncidentNumber:
-                    type: string
-                IncidentAnalysis:
-                    type: string
-                IncidentAnalysisConfidence:
-                    type: number
-                IncidentAnalysisSummary:
-                    type: string
-            required:
-                - IncidentDetails
-                - IncidentNumber
-                - IncidentAnalysis
-                - IncidentAnalysisConfidence
-                - IncidentAnalysisConfidence
+                IncidentDetails:
+                    type: object
+                    properties:
+                    IncidentNumber:
+                        type: string
+                    IncidentAnalysis:
+                        type: string
+                    IncidentAnalysisConfidence:
+                        type: number
+                    IncidentAnalysisSummary:
+                        type: string
+                required:
+                    - IncidentDetails
+                    - IncidentNumber
+                    - IncidentAnalysis
+                    - IncidentAnalysisConfidence
+                    - IncidentAnalysisConfidence
 
             UserEntityDetails:
                 type: array
