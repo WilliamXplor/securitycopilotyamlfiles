@@ -38,20 +38,20 @@ components:
                 IncidentDetails:
                     type: object
                     properties:
-                    IncidentNumber:
-                        type: string
-                    IncidentAnalysis:
-                        type: string
-                    IncidentAnalysisConfidence:
-                        type: number
-                    IncidentAnalysisSummary:
-                        type: string
-                required:
-                    - IncidentDetails
-                    - IncidentNumber
-                    - IncidentAnalysis
-                    - IncidentAnalysisConfidence
-                    - IncidentAnalysisConfidence
+                        IncidentNumber:
+                            type: string
+                        IncidentAnalysis:
+                            type: string
+                        IncidentAnalysisConfidence:
+                            type: number
+                        IncidentAnalysisSummary:
+                            type: string
+                    required:
+                        - IncidentDetails
+                        - IncidentNumber
+                        - IncidentAnalysis
+                        - IncidentAnalysisConfidence
+                        - IncidentAnalysisConfidence
 
             UserEntityDetails:
                 type: array
