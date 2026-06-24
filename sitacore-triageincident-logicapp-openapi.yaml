@@ -1,0 +1,51 @@
+openapi: 3.0.0
+
+info:
+    title: LogicApp Incident Triage Plugin OpenAPI
+    description: Runs Logic app to triage Sentinel incident
+    version: "0.9.2"
+
+servers:
+    - url: https://example.com
+
+paths:
+    /:
+        post: 
+            operationId: LogicApp_Incident_Triage_Plugin_OpenAPI
+            summary: Send analysis payload to Logic App
+            description: Invokes the logic app
+
+            requestBody:
+                required: true
+                content:
+                    application/json:
+                        schema:
+                            $ref: "#/components/schemas/sendTriagePayload"
+
+            responses:
+                "200":
+                    description: Send result status
+                    content:
+                        application/json:
+                            schema:
+                                $ref: "#/components/schemas/sendResultStatus"
+
+components:
+    schemas:
+        sendTriagePayload:
+            type: object
+            required:
+                - TriagePayload
+            properties:
+                DeviceName:
+                    type: string
+                    description: stringified analysis payload
+
+        sendResultStatus:
+            type: object
+            required:
+                -Outcome
+            properties:
+                Outcome:
+                    type: string
+

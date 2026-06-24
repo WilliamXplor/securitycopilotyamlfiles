@@ -1,0 +1,57 @@
+openapi: 3.0.0
+
+info:
+    title: SITAv2 Retrieve Entity Data OpenAPI
+    description: Retrieve entity data from SITAv2 storage
+    version: "1.0.0"
+
+servers:
+    - url: https://example.com
+
+paths:
+    /:
+        post: 
+            operationId: SITAv2RetrieveEntityDataOpenAPI
+            summary: Retrieve entity data from SITAv2 storage
+            description: Retrieve entity data from SITAv2 storage
+
+            requestBody:
+                required: true
+                content:
+                    application/json:
+                        schema:
+                            $ref: "#/components/schemas/InputSITAv2RetrieveEntityData"
+
+            responses:
+                "200":
+                    description: Send EntityData back to agent
+                    content:
+                        application/json:
+                            schema:
+                                $ref: "#/components/schemas/OutputSITAv2RetrieveEntityData"
+
+components:
+    schemas:
+        InputSITAv2RetrieveEntityData:
+            type: object
+            required:
+                - IncidentNumber
+                - EntityType
+            properties:
+                IncidentNumber:
+                    type: string
+                    description: Sentinel incident number
+                EntityType:
+                    type: string
+                    description: Type of entity data relates to
+
+
+        OutputSITAv2RetrieveEntityData:
+            type: object
+            required:
+                - EntityData
+            properties:
+                EntityData:
+                    type: array
+
+

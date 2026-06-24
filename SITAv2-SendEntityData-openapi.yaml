@@ -1,0 +1,71 @@
+openapi: 3.0.0
+
+info:
+    title: SITAv2 Send Entity Data OpenAPI
+    description: Send entity data to SITAv2 storage
+    version: "1.0.0"
+
+servers:
+    - url: https://example.com
+
+paths:
+    /:
+        post: 
+            operationId: SITAv2SendEntityDataOpenAPI
+            summary: Send entity data to SITAv2 storage
+            description: Send entity data to SITAv2 storage
+
+            requestBody:
+                required: true
+                content:
+                    application/json:
+                        schema:
+                            $ref: "#/components/schemas/InputSITAv2SendEntityData"
+
+            responses:
+                "200":
+                    description: Confirmation of send success
+
+components:
+    schemas:
+        InputSITAv2SendEntityData:
+            type: object
+            required:
+                - IncidentNumber
+                - EntityType
+                - EntityAnalysis
+            properties:
+                IncidentNumber:
+                    type: string
+                    description: Sentinel incident number
+                EntityType:
+                    type: string
+                    description: Type of entity data relates to
+                EntityAnalysis:
+                    type: array
+                    items:
+                        type: object
+                        required:
+                            - EntityValue
+                            - EntityCategory
+                            - AnalysisSummary
+                            - Verdict
+                            - Confidence
+                        properties:
+                            EntityValue:
+                                type: string
+                            EntityCategory:
+                                type: string
+                            AnalysisSummary:
+                                type: string
+                            Verdict:
+                                type: string
+                            Confidence:
+                                type: number
+                                format: float
+                                minimum: 0
+                                maximum: 1
+                            
+
+
+

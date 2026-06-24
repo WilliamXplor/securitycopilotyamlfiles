@@ -1,0 +1,26 @@
+Descriptor:
+  Name: LogicApp_IncidentTriage_Plugin
+  DisplayName: LogicApp Incident Triage Plugin
+  Description: Triages analysed security incident
+  Settings:
+    - Name: InstanceURL
+      Label: Instance URL
+      Description: The URL of the instance to connect to
+      HintText: "e.g. https://example.com"
+      SettingType: String
+      Required: true
+
+  SupportedAuthTypes:
+    - ApiKey
+
+  Authorization:
+    Type: APIKey
+    Key: sig
+    Location: QueryParams
+    AuthScheme: ''
+
+SkillGroups:
+  - Format: API
+    Settings:
+      OpenApiSpecURL: URL Goes Here
+      EndpointUrlSettingName: InstanceURL
