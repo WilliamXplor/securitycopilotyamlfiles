@@ -25,10 +25,7 @@ paths:
             responses:
                 "200":
                     description: Send confirmation of success back to agent
-                    content:
-                        application/json:
-                            schema:
-                                $ref: "#/components/schemas/OutputSITAv2SendEntityData"
+
 
 components:
     schemas:
@@ -47,36 +44,7 @@ components:
                     description: Type of entity data relates to
                 EntityAnalysis:
                     type: array
-                    items:
-                        type: object
-                        required:
-                            - EntityValue
-                            - EntityCategory
-                            - AnalysisSummary
-                            - Verdict
-                            - Confidence
-                        properties:
-                            EntityValue:
-                                type: string
-                            EntityCategory:
-                                type: string
-                            AnalysisSummary:
-                                type: string
-                            Verdict:
-                                type: string
-                            Confidence:
-                                type: number
-                                format: float
-                                minimum: 0
-                                maximum: 1
-
-            OutputSITAv2SendEntityData:
-                type: object
-                required:
-                    - success
-                properties:
-                    success:
-                        type: string
+                    description: "Array containing analysis of entities"
                             
 
 
