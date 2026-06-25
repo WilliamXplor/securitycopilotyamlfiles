@@ -24,7 +24,11 @@ paths:
 
             responses:
                 "200":
-                    description: Confirmation of send success
+                    description: Send confirmation of success back to agent
+                    content:
+                        application/json:
+                            schema:
+                                $ref: "#/components/schemas/OutputSITAv2SendEntityData"
 
 components:
     schemas:
@@ -65,6 +69,14 @@ components:
                                 format: float
                                 minimum: 0
                                 maximum: 1
+
+            OutputSITAv2SendEntityData:
+                type: object
+                required:
+                    - success
+                properties:
+                    success:
+                        type: string
                             
 
 
