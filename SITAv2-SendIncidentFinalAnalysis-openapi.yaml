@@ -1,0 +1,55 @@
+openapi: 3.0.0
+
+info:
+    title: SITAv2 Send Incident Final Analysis OpenAPI
+    description: Send incident final analysis to SITAv2 storage
+    version: "1.0.0"
+
+servers:
+    - url: https://example.com
+
+paths:
+    /:
+        post: 
+            operationId: SITAv2SendIncidentFinalAnalysisOpenAPI
+            summary: Send final analysis to SITAv2 storage
+            description: Send final analysis to SITAv2 storage
+
+            requestBody:
+                required: true
+                content:
+                    application/json:
+                        schema:
+                            $ref: "#/components/schemas/InputSITAv2SendIncidentFinalAnalysis"
+
+            responses:
+                "200":
+                    description: Send confirmation of success back to agent
+
+
+components:
+    schemas:
+        InputSITAv2SendIncidentFinalAnalysis:
+            type: object
+            required:
+                - IncidentNumber
+                - Verdict
+                - AnalysisSummary
+                - Confidence
+            properties:
+                IncidentNumber:
+                    type: string
+                    description: Sentinel incident number
+                Verdict:
+                    type: string
+                    description: Agent classification of incident
+                AnalysisSummary:
+                    type: string
+                    description: Summary of agent analysis
+                Confidence:
+                    type: number
+                    description: Confidence level for agent analysis
+                            
+
+
+
