@@ -1,0 +1,58 @@
+openapi: 3.0.0
+
+info:
+    title: SITAv2 Run KQL Queries
+    description: Runs pre-defined KQL queries to return data to be used by SITAv2 agents
+    version: "1.0.0"
+
+servers:
+    - url: https://example.com
+
+paths:
+    /:
+        post: 
+            operationId: SITAv2InitiateEntityQueries
+            summary: Initiate Pre-defined queries to return data for use by SITA agents
+            description: Initiate Pre-defined queries to return data for use by SITA agents
+
+            requestBody:
+                required: true
+                content:
+                    application/json:
+                        schema:
+                            $ref: "#/components/schemas/GetPreviousIncidentInfo"
+                        examples:
+                            example:
+                                value:
+                                    DeviceName: "Cybersecurity incident involving one user"
+
+            responses:
+                "200":
+                    description: Send results back
+                    content:
+                        application/json:
+                            schema:
+                                $ref: "#/components/schemas/sendData"
+
+components:
+    schemas:
+        GetPreviousIncidentInfo:
+            type: object
+            required:
+                - IncidentTitle
+            properties:
+                IncidentTitle:
+                    type: string
+                    description: Title of previous incidents to lookup
+
+        sendData:
+            type: object
+            required:
+                - PreviousIncidentStats
+                - PreviousIncidentDetailedInfo
+            properties:
+                PreviousIncidentStats:
+                    type: array
+                PreviousIncidentDetailedInfo:
+                    type: array
+
