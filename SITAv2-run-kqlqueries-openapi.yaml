@@ -20,11 +20,7 @@ paths:
                 content:
                     application/json:
                         schema:
-                            $ref: "#/components/schemas/GetPreviousIncidentInfo"
-                        examples:
-                            example:
-                                value:
-                                    DeviceName: "Cybersecurity incident involving one user"
+                            $ref: "#/components/schemas/SITAv2InitiateKQLQuery"
 
             responses:
                 "200":
@@ -32,27 +28,28 @@ paths:
                     content:
                         application/json:
                             schema:
-                                $ref: "#/components/schemas/sendData"
+                                $ref: "#/components/schemas/sendResults"
 
 components:
     schemas:
-        GetPreviousIncidentInfo:
+        SITAv2InitiateKQLQuery:
             type: object
             required:
-                - IncidentTitle
+                - EntityCategory
+                - EntityValue
             properties:
-                IncidentTitle:
+                EntityCategory:
                     type: string
-                    description: Title of previous incidents to lookup
+                    description: Type of entity
+                EntityValue:
+                    type: string
+                    description: Entity value
 
-        sendData:
+        sendResults:
             type: object
             required:
-                - PreviousIncidentStats
-                - PreviousIncidentDetailedInfo
+                - Results
             properties:
-                PreviousIncidentStats:
-                    type: array
-                PreviousIncidentDetailedInfo:
+                Results:
                     type: array
 
