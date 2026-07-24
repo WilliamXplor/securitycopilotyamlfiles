@@ -1,0 +1,51 @@
+openapi: 3.0.0
+
+info:
+    title: SITAv2 Find UPN
+    description: Runs KQL query to find UPN and UserId if initial lookup fails
+    version: "1.0.0"
+
+servers:
+    - url: https://example.com
+
+paths:
+    /:
+        post: 
+            operationId: SITAv2FindUPN
+            summary: Runs KQL query to find UPN and UserId if initial lookup fails
+            description: Runs KQL query to find UPN and UserId if initial lookup fails
+
+            requestBody:
+                required: true
+                content:
+                    application/json:
+                        schema:
+                            $ref: "#/components/schemas/SITAv2FindUPN"
+
+            responses:
+                "200":
+                    description: Send results back
+                    content:
+                        application/json:
+                            schema:
+                                $ref: "#/components/schemas/sendResults"
+
+components:
+    schemas:
+        SITAv2FindUPN:
+            type: object
+            required:
+                - EntityValue
+            properties:
+                EntityValue:
+                    type: string
+                    description: Entity value
+
+        sendResults:
+            type: object
+            required:
+                - Results
+            properties:
+                Results:
+                    type: array
+
