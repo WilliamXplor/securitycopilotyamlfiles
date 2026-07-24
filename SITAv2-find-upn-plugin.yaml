@@ -21,5 +21,5 @@ Descriptor:
 SkillGroups:
   - Format: API
     Settings:
-      OpenApiSpecUrl: 
+      OpenApiSpecUrl: https://raw.githubusercontent.com/WilliamXplor/securitycopilotyamlfiles/refs/heads/main/SITAv2-find-upn-openapi.yaml
       EndpointUrlSettingName: InstanceURL
