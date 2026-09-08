@@ -1,0 +1,55 @@
+openapi: 3.0.0
+
+info:
+    title: SITAv3 Entity Enrichment Queries
+    description: Run KQL and REST API queries to enrich Sentinel incident entities
+    version: "1.0.0"
+
+servers:
+    - url: https://example.com
+
+paths:
+    /:
+        post: 
+            operationId: SITAv3EntityEnrichmentQueries
+            summary: Provide search value and requested queries to logic app for execution
+            description: Provide search value and requested queries to logic app then invokes the logic app
+
+            requestBody:
+                required: true
+                content:
+                    application/json:
+                        schema:
+                            $ref: "#/components/schemas/SITAv3EntityEnrichmentQueries"
+
+            responses:
+                "200":
+                    description: Send results back
+                    content:
+                        application/json:
+                            schema:
+                                $ref: "#/components/schemas/sendResults"
+
+components:
+    schemas:
+        SITAv3EntityEnrichmentQueries:
+            type: object
+            required:
+                - SearchValue
+                - QueriesRequested
+            properties:
+                SearchValue:
+                    type: string
+                    description: string representing the entity to look up
+                QueriesRequested:
+                    type: array
+                    description: list of queries to run
+
+        sendResults:
+            type: object
+            required:
+                - QueryResults
+            properties:
+                QueryResults:
+                    type: array
+
