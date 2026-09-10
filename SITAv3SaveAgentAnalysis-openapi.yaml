@@ -50,6 +50,6 @@ components:
             required:
                 - status
             properties:
-                QueryResults:
+                status:
                     type: string
 
