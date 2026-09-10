@@ -1,0 +1,55 @@
+openapi: 3.0.0
+
+info:
+    title: SITAv3 Save Agent Analysis
+    description: Save agent analysis to storage account for processing
+    version: "1.0.0"
+
+servers:
+    - url: https://example.com
+
+paths:
+    /:
+        post: 
+            operationId: SITAv3SaveAgentAnalysis
+            summary: Save agent analysis to storage account for processing
+            description: Save agent analysis to storage account for processing
+
+            requestBody:
+                required: true
+                content:
+                    application/json:
+                        schema:
+                            $ref: "#/components/schemas/SITAv3SaveAgentAnalysis"
+
+            responses:
+                "200":
+                    description: Send results back
+                    content:
+                        application/json:
+                            schema:
+                                $ref: "#/components/schemas/sendResults"
+
+components:
+    schemas:
+        SITAv3SaveAgentAnalysis:
+            type: object
+            required:
+                - SentinelIncidentGUID
+                - AgentAnalysis
+            properties:
+                SentinelIncidentGUID:
+                    type: string
+                    description: GUID of the Sentinel incident being investigated
+                AgentAnalysis:
+                    type: object
+                    description: JSON data containing analysis of the Sentinel incident being investigated
+
+        sendResults:
+            type: object
+            required:
+                - status
+            properties:
+                QueryResults:
+                    type: string
+
