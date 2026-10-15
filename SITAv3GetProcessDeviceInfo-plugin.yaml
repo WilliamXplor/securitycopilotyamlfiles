@@ -21,5 +21,5 @@ Descriptor:
 SkillGroups:
   - Format: API
     Settings:
-      OpenApiSpecUrl: INSERT URL HERE
+      OpenApiSpecUrl: https://raw.githubusercontent.com/WilliamXplor/securitycopilotyamlfiles/refs/heads/main/SITAv3GetProcessDeviceInfo-openapi.yaml
       EndpointUrlSettingName: InstanceURL
