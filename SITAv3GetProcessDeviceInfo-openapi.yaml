@@ -1,0 +1,55 @@
+openapi: 3.0.0
+
+info:
+    title: SITAv3 Get Process Device Info
+    description: Run KQL query to return information about processes and commands run on a device
+    version: "1.0.0"
+
+servers:
+    - url: https://example.com
+
+paths:
+    /:
+        post: 
+            operationId: SITAv3GetProcessDeviceInfo
+            summary: Provide device name and command line for searching
+            description: Provide device name and command line for searching
+
+            requestBody:
+                required: true
+                content:
+                    application/json:
+                        schema:
+                            $ref: "#/components/schemas/SITAv3GetProcessDeviceInfo"
+
+            responses:
+                "200":
+                    description: Send results back
+                    content:
+                        application/json:
+                            schema:
+                                $ref: "#/components/schemas/sendResults"
+
+components:
+    schemas:
+        SITAv3GetProcessDeviceInfo:
+            type: object
+            required:
+                - CommandLine
+                - DeviceName
+            properties:
+                CommandLine:
+                    type: string
+                    description: string representing the CommandLine to lookup
+                QueriesRequested:
+                    type: string
+                    description: string representing the DeviceName to lookup
+
+        sendResults:
+            type: object
+            required:
+                - QueryResults
+            properties:
+                QueryResults:
+                    type: array
+
