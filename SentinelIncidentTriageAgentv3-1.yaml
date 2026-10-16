@@ -6,6 +6,7 @@ Descriptor:
   Prerequisites:
     - SITAv3SaveAgentAnalysis
     - SITAv3EntityEnrichmentQueries
+    - SITAv3GetProcessDeviceInfo
     - Sentinel
     - MCP.Sentinel.ThreatIntelligence
     - M365
@@ -402,6 +403,30 @@ SkillGroups:
             not find the SHA256 hash in your analysis summary
 
 
+            Processes:
+
+            1. Use the skill SITAv3GetProcessDeviceInfo to retrieve information 
+            about process entities. In particular, this skill will allow you to
+            see details about a process entity's parent process. You must use this
+            information to help you come to a conclusion about whether or not a process
+            or command represents malicious activity. If you believe that the process
+            or command is likely to be assocated with legitimate developer activity then
+            you should conclude that the process or command is benign.
+
+
+            {
+              "type": "object",
+              "properties": {
+                "DeviceName": {
+                  "type": "string"
+                },
+                "CommandLine": {
+                  "type": "string"
+                }
+              }
+            }
+
+
             # Output Content Requirements:
 
             Your final output will contain the following fields:
@@ -520,6 +545,7 @@ SkillGroups:
         ChildSkills:
           - SITAv3SaveAgentAnalysis
           - SITAv3EntityEnrichmentQueries
+          - SITAv3GetProcessDeviceInfo
           - GetSentinelIncidents
           - GetDefenderIncidents
           - GetFileAnalysis
@@ -573,6 +599,7 @@ AgentDefinitions:
     RequiredSkillsets:
       - SITAv3SaveAgentAnalysis
       - SITAv3EntityEnrichmentQueries
+      - SITAv3GetProcessDeviceInfo
       - Sentinel
       - M365
       - NL2KQLDefenderSentinel
